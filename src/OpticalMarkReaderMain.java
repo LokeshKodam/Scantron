@@ -21,6 +21,7 @@ public class OpticalMarkReaderMain {
     private static String fileChooser() {
         String userDirLocation = System.getProperty("user.dir");
         File userDir = new File(userDirLocation);
+        /* hello */
         JFileChooser fc = new JFileChooser(userDir);
         int returnVal = fc.showOpenDialog(null);
         File file = fc.getSelectedFile();
