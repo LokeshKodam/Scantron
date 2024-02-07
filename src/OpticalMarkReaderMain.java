@@ -1,4 +1,5 @@
 import FileIO.PDFHelper;
+import core.DImage;
 import processing.core.PImage;
 
 import javax.swing.*;
@@ -10,17 +11,26 @@ public class OpticalMarkReaderMain {
     public static void main(String[] args) {
         String pathToPdf = fileChooser();
         System.out.println("Loading pdf at " + pathToPdf);
-        
+
         ArrayList<PImage>img = PDFHelper.getPImagesFromPdf("assets/omrtest.pdf");
-        
 
 
 
-        for (int i=0;i< img.size(); i++){
-            img.get(i)= int Array[][];
-            
 
+        DImage a = new DImage(img.get(3));
+        DImage aSheet= new DImage(img.get(1));
+        short [][] answerSheet=aSheet.getBWPixelGrid();
+        short[][] blackgrid = a.getBWPixelGrid();
+
+        System.out.println(blackgrid[1][1]);
+
+        for (int i=0; i <blackgrid.length;i++) {
+            for (int j=0; j<blackgrid[0].length; j++){
+                if (blackgrid[i][j] == answerSheet[i][j]){
+                }
+            }
         }
+
 
 
 

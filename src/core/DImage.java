@@ -4,7 +4,7 @@ import processing.core.PImage;
 // TODO: comment this class
 
 public class DImage {
-    private PImage img;
+    private static PImage img;
     private int width, height;
     private ColorComponents2d channels;
 
@@ -29,7 +29,7 @@ public class DImage {
         this.img.updatePixels();
     }
 
-    public int[] getColorPixelArray() {
+    public static int[] getColorPixelArray() {
         img.loadPixels();
         return img.pixels;
     }
@@ -38,7 +38,7 @@ public class DImage {
         return convertTo2dArray( getColorPixelArray(), this.width, this.height );
     }
 
-    public short[] getBWPixelArray() {
+    public static short[] getBWPixelArray() {
         return convertToShortGreyscale( getColorPixelArray() );
     }
 
