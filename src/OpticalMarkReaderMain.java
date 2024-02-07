@@ -1,3 +1,6 @@
+import FileIO.PDFHelper;
+import processing.core.PImage;
+
 import javax.swing.*;
 import java.io.File;
 
@@ -7,6 +10,19 @@ public class OpticalMarkReaderMain {
     public static void main(String[] args) {
         String pathToPdf = fileChooser();
         System.out.println("Loading pdf at " + pathToPdf);
+        
+        ArrayList<PImage>img = PDFHelper.getPImagesFromPdf("assets/omrtest.pdf");
+        
+
+
+
+        for (int i=0;i< img.size(); i++){
+            img.get(i)= int Array[][];
+            
+
+        }
+
+
 
         /*
         Your code here to...
