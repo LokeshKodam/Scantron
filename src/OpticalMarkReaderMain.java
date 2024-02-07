@@ -4,6 +4,8 @@ import processing.core.PImage;
 
 import javax.swing.*;
 import java.io.File;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 // Author: David Dobervich (this is my edit)
 // ANOTHER EDIT.
