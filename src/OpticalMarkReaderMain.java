@@ -1,18 +1,18 @@
+import FileIO.PDFHelper;
 import core.DImage;
 import processing.core.PImage;
 
 import javax.swing.*;
 import java.io.File;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-import FileIO.PDFHelper;
-
+// Author: David Dobervich (this is my edit)
+// ANOTHER EDIT.
 public class OpticalMarkReaderMain {
     public static void main(String[] args) {
         String pathToPdf = fileChooser();
         System.out.println("Loading pdf at " + pathToPdf);
-
-
         int answersheetCount = 12;
         int answerCount1 = 0;
         int answerCount2 = 0;
@@ -21,7 +21,7 @@ public class OpticalMarkReaderMain {
         int answerCount5 = 0;
 
 
-        ArrayList<PImage> img = PDFHelper.getPImagesFromPdf("assets/omrtest.pdf");
+        ArrayList<PImage>img = PDFHelper.getPImagesFromPdf("assets/omrtest.pdf");
         ArrayList<PImage>twomage=PDFHelper.getPImagesFromPdf("assets/omrtest.pdf");
 
 
@@ -32,11 +32,11 @@ public class OpticalMarkReaderMain {
         short [][] answerSheet= aSheet.getBWPixelGrid();
         short[][] blackgrid = a.getBWPixelGrid();
 
-        // System.out.println(blackgrid[1][1]);
+       // System.out.println(blackgrid[1][1]);
 
-        //    System.out.println("s ize of blackgrd: " + blackgrid.length + " "  + blackgrid[0].length);
-        //    System.out.println("size of answersheet: " + answerSheet.length +  " " + answerSheet[0].length);
-        for (int i=0; i <blackgrid.length;i++) {
+    //    System.out.println("s ize of blackgrd: " + blackgrid.length + " "  + blackgrid[0].length);
+    //    System.out.println("size of answersheet: " + answerSheet.length +  " " + answerSheet[0].length);
+       for (int i=0; i <blackgrid.length;i++) {
             for (int j=0; j<blackgrid[0].length; j++){
                 System.out.println("i: " + i + " j: " + j);
 
@@ -75,9 +75,11 @@ public class OpticalMarkReaderMain {
     private static String fileChooser() {
         String userDirLocation = System.getProperty("user.dir");
         File userDir = new File(userDirLocation);
+        /* hello */
+
         JFileChooser fc = new JFileChooser(userDir);
         int returnVal = fc.showOpenDialog(null);
-        File file= fc.getSelectedFile();
+        File file = fc.getSelectedFile();
         return file.getAbsolutePath();
     }
 }
