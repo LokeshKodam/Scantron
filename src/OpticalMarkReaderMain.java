@@ -34,8 +34,8 @@ public class OpticalMarkReaderMain {
 
        // System.out.println(blackgrid[1][1]);
 
-        System.out.println("size of blackgrd: " + blackgrid.length + " "  + blackgrid[0].length);
-        System.out.println("size of answersheet: " + answerSheet.length +  " " + answerSheet[0].length);
+    //    System.out.println("s ize of blackgrd: " + blackgrid.length + " "  + blackgrid[0].length);
+    //    System.out.println("size of answersheet: " + answerSheet.length +  " " + answerSheet[0].length);
        for (int i=0; i <blackgrid.length;i++) {
             for (int j=0; j<blackgrid[0].length; j++){
                 System.out.println("i: " + i + " j: " + j);
@@ -43,17 +43,19 @@ public class OpticalMarkReaderMain {
                 if (blackgrid[i][j] == answerSheet[i][j]){
                     if (blackgrid[i][j]==255){
                         answerCount1++;
-                        i+=50;
+                        if(i<blackgrid.length-50){
+                            i+=50;
+                        }
                     }
                 }
             }
         }
         System.out.println(blackgrid.length+", "+blackgrid[0].length);
         System.out.println(answerSheet.length+", "+answerSheet[0].length);
-//        System.out.println("REAL ANSWER COUNT OUT OF 12: " + answersheetCount+"/12");
-//        System.out.println("SCANTRON 1 COUNT : " + answerCount1);
-//        System.out.println("SCANTRON 2 COUNT : " + answerCount2);
-//        System.out.println("SCANTRON 3 COUNT : " + answerCount3);
+        System.out.println("REAL ANSWER COUNT OUT OF 12: " + answersheetCount+"/12");
+        System.out.println("SCANTRON 1 COUNT : " + answerCount1);
+        System.out.println("SCANTRON 2 COUNT : " + answerCount2);
+        System.out.println("SCANTRON 3 COUNT : " + answerCount3);
 //        System.out.println("SCANTRON 4 COUNT : " + answerCount4);
 //        System.out.println("SCANTRON 5 COUNT : " + answerCount5);
 

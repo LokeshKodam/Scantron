@@ -6,12 +6,13 @@ import core.DisplayWindow;
 import processing.core.PImage;
 
 public class FilterTest {
-    public static String currentFolder = System.getProperty("user.dir") + "/";
+    public static String currentFolder = System.getProperty("user.dir") + "\\";
 
     public static void main(String[] args) {
-        // SaveAndDisplayExample();
+        SaveAndDisplayExample();
 
-        RunTheFilter();
+//        RunTheFilter();
+
     }
 
     private static void RunTheFilter() {
@@ -27,9 +28,9 @@ public class FilterTest {
     }
 
     private static void SaveAndDisplayExample() {
-        PImage img = PDFHelper.getPageImage("assets/omrtest.pdf",1);
-        img.save(currentFolder + "assets/page1.png");
-
-        DisplayWindow.showFor("assets/page1.png");
+        PImage img = PDFHelper.getPageImage("assets/OfficialOMRSampleDoc.pdf",1);
+        img.save(currentFolder + "assets\\page1.png");
+        System.out.println(currentFolder + "assets\\page2.png");
+        DisplayWindow.showFor(currentFolder + "assets\\page2.png");
     }
 }
